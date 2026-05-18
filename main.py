@@ -1,4 +1,6 @@
 import os
+from dotenv import load_dotenv
+load_dotenv()
 import disnake
 from disnake.ext import commands, tasks
 from flask import Flask
@@ -163,5 +165,5 @@ async def on_dropdown(inter):
 
 if __name__ == "__main__":
     Thread(target=run_flask, daemon=True).start()
-    token = os.getenv("DISCORD_TOKEN")
+    token = os.getenv("TOKEN")
     bot.run(token)
